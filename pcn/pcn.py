@@ -14,7 +14,7 @@ minFace_ = 128
 scale_ = 1.414
 stride_ = 8
 #classThreshold_ = [0.37, 0.43, 0.97]
-classThreshold_ = [0.07, 0.25, 0.55]
+classThreshold_ = [0.37, 0.25, 0.55]
 #nmsThreshold_ = [0.8, 0.8, 0.24]
 nmsThreshold_ = [0.8, 0.8, 0.245]
 
