@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "==18.9b0"
+pytest = "*"
+
+[packages]
+numpy = "*"
+flask = "*"
+opencv-contrib-python = "*"
+matplotlib = "*"
+torch = {file = "https://download.pytorch.org/whl/cu100/torch-1.1.0-cp36-cp36m-win_amd64.whl", index="piwheels"}
+torchvision = "*"
+black = "==18.9b0"
+pytest = "*"
+
+[requires]
+python_version = "3.6"

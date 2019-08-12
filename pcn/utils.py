@@ -12,6 +12,41 @@ class Window:
         self.angle = angle
         self.score = score
 
+def extend_point(x1, y1, x2, y2, percent):
+    a = np.array([x1, y1])
+    b = np.array([x2, y2])
+    length = abs(np.linalg.norm(b - a))
+    extend_length = length * percent
+    rx=(-extend_length*x1+(length+extend_length)*x2)/length
+    ry=(-extend_length*y1+(length+extend_length)*y2)/length
+    return [rx, ry]
+
+def calc_corners(x, y, width, height, angle):
+    x1 = x
+    y1 = y
+    x2 = width + x -1
+    y2 = height * 1 + y -1
+    centerX = (x1 + x2) // 2
+    centerY = (y1 + y2) // 2
+    lst = (x1, y1), (x1, y2), (x2, y2), (x2, y1)
+    pointlist = [rotate_point(x, y, centerX, centerY, angle) for x, y in lst]
+    # contain jaw
+    pointlist[1] = extend_point(
+        pointlist[0][0],
+        pointlist[0][1],
+        pointlist[1][0],
+        pointlist[1][1],
+        0.125,
+    )
+    pointlist[2] = extend_point(
+        pointlist[3][0],
+        pointlist[3][1],
+        pointlist[2][0],
+        pointlist[2][1],
+        0.125,
+    )
+    return pointlist
+
 def rotate_point(x, y, centerX, centerY, angle):
     x -= centerX
     y -= centerY

@@ -10,11 +10,14 @@ from .utils import Window, draw_face
 
 # global settings
 EPS = 1e-5
-minFace_ = 20 * 1.4
+minFace_ = 128
 scale_ = 1.414
 stride_ = 8
-classThreshold_ = [0.37, 0.43, 0.97]
-nmsThreshold_ = [0.8, 0.8, 0.3]
+#classThreshold_ = [0.37, 0.43, 0.97]
+classThreshold_ = [0.07, 0.25, 0.55]
+#nmsThreshold_ = [0.8, 0.8, 0.24]
+nmsThreshold_ = [0.8, 0.8, 0.245]
+
 angleRange_ = 45
 stable_ = 0
 
